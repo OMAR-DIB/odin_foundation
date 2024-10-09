@@ -12,6 +12,11 @@ html, body {
 .item{
     /* flex: 1; */
 }
+button{
+    color: white;
+    background-color: blue;
+    border-radius: 10px;
+}
 .appbar .item  a{
     color : blue;
     padding: 10px;
@@ -20,18 +25,24 @@ html, body {
 
 .head {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
 }
 
 .item-head p {
-    max-width: 200px; /* Adjust the width as needed */
-    overflow: hidden; /* Hide overflowing text */
-    text-overflow: ellipsis; /* Add ellipsis to indicate truncated text */
+    max-width: 400px; /* Adjust the width as needed */
+}
+.item-head img{
+    width: 400px;
+    height: 150px;
 }
 header{
     background-color: aqua;
     padding-bottom: 30px;
+}
+.content h1 {
+    justify-content: center;
+    display: flex;
 }
 
 .sub-img{
@@ -44,6 +55,72 @@ header{
     flex-direction: column; /* Stack the image and text vertically */
     align-items: center; /* Center the content horizontally */
     text-align: center; /* Center the text under the image */
-    max-width: 300px; /* Optional: set a max-width for better layout control */
-    margin: 0 auto; /* Center the sub block within its container */
+    max-width: 280px; /* Optional: set a max-width for better layout control */
+    margin: 0 10px;
+}
+.sub img {
+    border: 3px blue solid;
+    border-radius: 30px;
+}
+.paragraph{
+    background-color: cadetblue;
+    height: 300px;
+    align-content: center;
+}
+.quote {
+    justify-content: center;
+    display: flex;
+    max-width: 600px; /* Adjust this to control how wide the paragraph can be */
+    margin: 0 auto; /* Center the quote container */
+}
+
+.quote p {
+    margin-bottom: 0px;
+    text-align: center; /* Ensure the text is centered */
+}
+.signature{
+    text-align:center;
+    margin-left: 500px;
+}
+/*       */
+.sign-up{
+    height: 400px;
+    justify-content: center;
+   
+    display: flex;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    background-color: aquamarine;
+    width: 700px;
+    border-radius: 30px;
+    margin-top: 100px;
+    gap: 90px;
+}
+.text{
+    align-content: center;
+}
+.text p {
+    margin: 0 auto;
+}
+.text h3{
+    margin: 0 auto;
+}
+
+.button{
+    align-content: center;
+}
+/*           */
+footer{
+    background-color: rgb(3, 52, 54);
+    margin-bottom: 0;
+    height: 70px;
+    align-content: center;
+}
+footer > p{
+    color: white;
+    display: flex;
+    justify-content: center;
 }
