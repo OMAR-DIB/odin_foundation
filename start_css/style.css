@@ -1,0 +1,49 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.appbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* gap : 90px; */
+}
+.item{
+    /* flex: 1; */
+}
+.appbar .item  a{
+    color : blue;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.head {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.item-head p {
+    max-width: 200px; /* Adjust the width as needed */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Add ellipsis to indicate truncated text */
+}
+header{
+    background-color: aqua;
+    padding-bottom: 30px;
+}
+
+.sub-img{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.sub {
+    display: flex;
+    flex-direction: column; /* Stack the image and text vertically */
+    align-items: center; /* Center the content horizontally */
+    text-align: center; /* Center the text under the image */
+    max-width: 300px; /* Optional: set a max-width for better layout control */
+    margin: 0 auto; /* Center the sub block within its container */
+}

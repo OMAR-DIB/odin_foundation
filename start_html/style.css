@@ -1,0 +1,17 @@
+
+.header {
+    font-family: 'Courier New', Courier, monospace;
+    color: blue;
+}
+.links{
+    border: solid 2px black;
+    border-radius: 2px;
+    padding: 10px;
+}
+li {
+    padding: 2px;
+    color: red;
+}
+ul{
+    background-color: burlywood;
+}
