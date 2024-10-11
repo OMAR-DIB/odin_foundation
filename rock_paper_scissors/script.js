@@ -40,31 +40,40 @@ let humanSelection;
 let computerSelection;
 
 const humanBtn = document.querySelector(".human")
+const humanP = document.createElement("p")
 humanBtn.onclick = () => {
     humanSelection = gethumanSelection();
+    humanP.textContent = humanSelection
 }
 
+humanBtn.appendChild(humanP)
+
+
 const computerBtn = document.querySelector(".computer")
+const compP = document.createElement("p")
 computerBtn.onclick = () => {
     computerSelection = getComputedSelection();
+    compP.textContent = computerSelection
 }
+computerBtn.append(compP)
+
 
 const playBtn = document.querySelector("#play");
 playBtn.onclick = () => {
     if (humanSelection && computerSelection) {
-      playRound(humanSelection, computerSelection);
+        playRound(humanSelection, computerSelection);
     } else {
-      console.log("Please select both human and computer choices before playing.");
+        console.log("Please select both human and computer choices before playing.");
     }
-  };
+};
 
 // let humanSelection = gethumanSelection()
 // let computerSelection = getComputedSelection()
 
 // function playGame() {
-    //     for (var i = 0; i < 5; i++) {
-        //         let humanSelection = gethumanSelection()
-        //         let computerSelection = getComputedSelection()
+//     for (var i = 0; i < 5; i++) {
+//         let humanSelection = gethumanSelection()
+//         let computerSelection = getComputedSelection()
 //         console.log(`Round ${i + 1}: Human chose ${humanSelection}, Computer chose ${computerSelection}`);
 //         playRound(humanSelection, computerSelection)
 //     }

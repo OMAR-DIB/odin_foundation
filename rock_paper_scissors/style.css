@@ -1,0 +1,26 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: aquamarine;
+    gap: 30px;
+}
+
+.value {
+    /* display: flex;
+    justify-content: center; */
+     gap: 30px;
+}
+
+.result {
+    /* display: flex;
+    justify-content: center; */
+} 
