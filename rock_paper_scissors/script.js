@@ -36,17 +36,39 @@ function gethumanSelection() {
     let answer = prompt("Please enter rock, paper or scissors: ")
     return answer
 }
+let humanSelection;
+let computerSelection;
 
-
-
-function playGame() {
-    for (var i = 0; i < 5; i++) {
-        let humanSelection = gethumanSelection()
-        let computerSelection = getComputedSelection()
-        console.log(`Round ${i + 1}: Human chose ${humanSelection}, Computer chose ${computerSelection}`);
-        playRound(humanSelection, computerSelection)
-    }
-    console.log(`Final Scores: Human: ${humanScore}, Computer: ${computerScore}, Ties: ${noWinner}`);
+const humanBtn = document.querySelector(".human")
+humanBtn.onclick = () => {
+    humanSelection = gethumanSelection();
 }
 
-playGame()
+const computerBtn = document.querySelector(".computer")
+computerBtn.onclick = () => {
+    computerSelection = getComputedSelection();
+}
+
+const playBtn = document.querySelector("#play");
+playBtn.onclick = () => {
+    if (humanSelection && computerSelection) {
+      playRound(humanSelection, computerSelection);
+    } else {
+      console.log("Please select both human and computer choices before playing.");
+    }
+  };
+
+// let humanSelection = gethumanSelection()
+// let computerSelection = getComputedSelection()
+
+// function playGame() {
+    //     for (var i = 0; i < 5; i++) {
+        //         let humanSelection = gethumanSelection()
+        //         let computerSelection = getComputedSelection()
+//         console.log(`Round ${i + 1}: Human chose ${humanSelection}, Computer chose ${computerSelection}`);
+//         playRound(humanSelection, computerSelection)
+//     }
+//     console.log(`Final Scores: Human: ${humanScore}, Computer: ${computerScore}, Ties: ${noWinner}`);
+// }
+
+// playGame()
