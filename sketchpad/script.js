@@ -7,44 +7,36 @@ function defaultGrid(selection) {
     makeColumns(selection);
     hoverEffect();
 }
+
 function makeRows(rowCount) {
     for (var i = 0; i < rowCount; i++) {
         let row = document.createElement("div");
         container.appendChild(row).className = "row-grid";
     }
-
 }
+
 function makeColumns(columnCount) {
     for (var i = 0; i < rowCreated.length; i++) {
         for (var j = 0; j < columnCount; j++) {
             let column = document.createElement("div");
             rowCreated[i].appendChild(column).classList = "cell";
         }
+    }
+}
 
-    }
-}
 function clearGrid() {
-    // Remove all child elements (the existing grid) from the container
-    while (container.lastChild) {
-        container.removeChild(container.lastChild);
-    }
+    let deleteRow = document.querySelectorAll(".row-grid");
+    let deleteColumn = document.querySelectorAll(".cell");
+    deleteRow.forEach(cell => cell.remove());
+    deleteColumn.forEach(cell => cell.remove());
 }
-// function addHoverEffect() {
-//     const cells = document.querySelectorAll('.cell');
-//     cells.forEach(cell => {
-//         cell.addEventListener('mouseover', function () {
-//             // Change background color on hover
-//             cell.style.backgroundColor = 'lightblue'; // Choose any color you like
-//             // Optionally, you can also add a class instead:
-//             // cell.classList.add('hovered');
-//         });
-//     });
-// }
+
 function hoverEffect() {
     const cells = document.querySelectorAll(".cell");
     cells.forEach(cell => {
         cell.addEventListener('mouseover', function () {
-            cell.classList.add("hovered");
+             const rgb = `rgb(${ Math.floor(Math.random() * 256)}, ${ Math.floor(Math.random() * 256)}, ${ Math.floor(Math.random() * 256)})`;
+            cell.style.backgroundColor = rgb;
         });
     });
 }
@@ -54,14 +46,17 @@ function getSelection(){
     let answer = prompt("Please x,x grid :");
     return  parseInt(answer); 
 }
-reset.onclick = () => {
-    selection = getSelection();
-    if (!isNaN(selection) && selection > 0) {
-        defaultGrid(selection); // Create new grid based on user's selection
-    } else {
-        alert("Please enter a valid number.");
+
+reset.onclick = () => {   
+    while(true){
+        selection = getSelection();
+        if (!isNaN(selection) && selection > 0) {
+            defaultGrid(selection); 
+            break;
+        } else {
+            alert("Please enter a valid number.");
+        }
     }
 };
 
-// Default grid on page load
 defaultGrid(16)
