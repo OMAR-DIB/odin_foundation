@@ -1,0 +1,23 @@
+.calculator{
+    display: flex;
+    flex-direction: column;
+}
+.buttons {
+    display: flex;
+    flex-direction: column;
+}
+.first {
+    display: flex;
+}
+.second {
+    display: flex;
+}
+.third{
+    display: flex;
+}
+.fourth{
+    display: flex;
+}
+.fifth{
+    display: flex;
+}
