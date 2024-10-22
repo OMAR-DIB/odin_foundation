@@ -1,7 +1,18 @@
 html,body{
     margin:0;
-    
-    
+    background-color:floralwhite;
+}
+p{
+    width: 400px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background-color:antiquewhite;
+    font-size: large;
+    text-shadow: 1px 1px 1px #000000;
+    box-shadow: 1px 1px 2px #907e05;
 }
 .calculator{
     height: 100vh;
@@ -9,18 +20,18 @@ html,body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
-}
-.buttons {
-    display: flex;
-    flex-direction: column;
-    
 }
 .button{
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
+    background-color: bisque;
+    border: 1px rgb(122, 100, 10) solid;
+    font-size: large;
 }
-
+.button:active {
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    background-color:burlywood;
+  }
 .first {
     display: flex;
 }
