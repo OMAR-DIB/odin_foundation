@@ -1,11 +1,26 @@
+html,body{
+    margin:0;
+    
+    
+}
 .calculator{
+    height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
 }
 .buttons {
     display: flex;
     flex-direction: column;
+    
 }
+.button{
+    width: 50px;
+    height: 50px;
+}
+
 .first {
     display: flex;
 }

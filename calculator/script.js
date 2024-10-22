@@ -45,6 +45,16 @@ buttons.forEach((button)=> {
             display.textContent = 0;
             return ;
         }
+        if (button.classList.contains("delete-one")){
+            if (!operator){
+                nb1 = nb1.slice(0,-1);
+                display.textContent = nb1 || 0;
+            }else{
+                nb2 = nb2.slice(0,-1);
+                display.textContent = nb2 || 0;
+            }
+            return ;
+        }
         if (!operator){
             if (!isNaN(value)){
                 nb1 += value;
