@@ -14,6 +14,9 @@ function divide(nb1, nb2) {
     return nb1 / nb2;
 }
 
+function restDeDivision(nb1, nb2) {
+    return nb1 % nb2;
+}
 function operate(nb1, nb2, operator) {
     let res;
     if (operator === "*") {
@@ -24,7 +27,9 @@ function operate(nb1, nb2, operator) {
         res = add(nb1, nb2);
     } else if (operator === "/") {
         res = divide(nb1, nb2);
-    } 
+    } else if (operator === "%") {
+        res = restDeDivision(nb1, nb2);
+    }
     return res;
 }
 
@@ -35,45 +40,45 @@ let nb1 = "";
 let nb2 = "";
 let operator = "";
 
-buttons.forEach((button)=> {
-    button.addEventListener("click" , function (){
+buttons.forEach((button) => {
+    button.addEventListener("click", function () {
         let value = button.textContent;
-        if (value === "Clear"){
+        if (value === "Clear") {
             nb1 = "";
-            nb2 = ""; 
+            nb2 = "";
             operator = "";
             display.textContent = 0;
-            return ;
+            return;
         }
-        if (button.classList.contains("delete-one")){
-            if (!operator){
-                nb1 = nb1.slice(0,-1);
+        if (button.classList.contains("delete-one")) {
+            if (!operator) {
+                nb1 = nb1.slice(0, -1);
                 display.textContent = nb1 || 0;
-            }else{
-                nb2 = nb2.slice(0,-1);
+            } else {
+                nb2 = nb2.slice(0, -1);
                 display.textContent = nb2 || 0;
             }
-            return ;
+            return;
         }
-        if (!operator){
-            if (!isNaN(value)){
+        if (!operator) {
+            if (!isNaN(value)) {
                 nb1 += value;
                 display.textContent = nb1;
-            }else{
+            } else {
                 operator = value;
             }
-        }else {
+        } else {
             nb2 += value;
             display.textContent = nb2;
         }
     })
 })
-equal.addEventListener("click" , function(){
-    if(nb1 && nb2 && operator){
-        let res = operate(parseFloat(nb1),parseFloat(nb2),operator);
+equal.addEventListener("click", function () {
+    if (nb1 && nb2 && operator) {
+        let res = operate(parseFloat(nb1), parseFloat(nb2), operator);
         display.textContent = res;
-        nb1= res;
-        nb2 ="";
-        operator="";
+        nb1 = res;
+        nb2 = "";
+        operator = "";
     }
 });
